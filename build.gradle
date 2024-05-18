@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+group = 'com.codechallenge'
+
+java {
+    sourceCompatibility = '21'
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.apache.groovy:groovy:4.0.16'
+    testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
